@@ -10,6 +10,7 @@ const cors = require('cors');
 const bodyParser = require('body-parser');
 const { graphqlHTTP } = require('express-graphql');
 const schema = require('./schema/schema');
+
 const port = process.env.PORT || 4000;
 
 
@@ -86,9 +87,8 @@ app.use((error, req, res, next) => {
     }
   }
 });
-app.use(express.static(path.join(__dirname, 'build')));
 
-app.get('/', function (req, res) {
-  res.sendFile(path.join(__dirname, 'build', 'index.html'));
-});
+
+
+
 app.listen(port, console.log(`Server running on port: ${port}`))
