@@ -88,7 +88,9 @@ app.use((error, req, res, next) => {
   }
 });
 
-
+app.get('/read', (req, res)=>{
+  res.send('server is running')
+})
 
 
 app.listen(port, console.log(`Server running on port: ${port}`))
